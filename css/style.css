@@ -1,0 +1,29 @@
+/******************** Import des polices Shrikhand et Roboto ********************/
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+header{
+font-family: "shrikhand";
+text-align: center;
+padding: 0.3em;
+}
+.localisation {
+    text-align: center;
+    padding: 1em;
+    background-color: rgb(169, 164, 164);
+}
+
+
+.presentation{
+    text-align: center;
+    background-color: rgb(237, 234, 234);
+    padding: 10px 20px 50px 10px;
+}
+
+.presentation__btn{
+    border-radius: 20px;
+    border: none;
+    padding: 1em;
+    background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+}
+
