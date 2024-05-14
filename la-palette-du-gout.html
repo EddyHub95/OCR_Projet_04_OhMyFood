@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- redimensionnement de la page pour correspondre à la largeur de l'écran-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Lien vers le fichier css-->
+    <link rel="stylesheet" href="./css/restaurant.css" />
+    <!--Lien vers la police Shrikhand-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <!--Lien vers la police Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Lien vers FontAwesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>la-palette-du-gout</title>
+  </head>
+
+  <body>
+    <!--Intégration du Header-->
+    <header>
+      <a href="index.html" class="back">
+        <i class="fa-solid fa-arrow-left back_icon"></i>
+      </a>
+      <img
+        src="./Images-et-textes-Ohmyfood/images/logo/ohmyfood@2x.svg"
+        alt="Logo Ohmyfood"
+      />
+      <div class="blank"></div>
+    </header>
+
+    <main class="container_principal">
+      <div class="top_image">
+        <img
+          src="./Images-et-textes-Ohmyfood/images/restaurants/La-palette-du-gout.jpg"
+          alt="Image de la palette du goût"
+        />
+      </div>
+
+      <section class="menu_restaurant">
+        <div class="restaurant_title">
+          <h1>La palette du goût</h1>
+        </div>
+        <div class="restaurant_heart">
+          <button>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
+        <div class="menu_container">
+          <div class="restaurant_subtitle">
+            <h2>Entrées</h2>
+            <div class="underline"></div>
+          </div>
+          <div class="carte_du_menu">
+            <div class="carte_du_menu_entree">
+              <span class="carte_du_menu_text"> </span>
+              <h3>Fricassée d'escargots</h3>
+              <p>Au piment d'Espelette</p>
+              <span class="check_price">
+                <i class="fa-solid fa-check"></i>
+                <span class="price">25€</span>
+              </span>
+            </div>
+
+            <div class="carte_du_menu_entree">
+              <span class="carte_du_menu_text"> </span>
+              <h3>Foie gras de canard mi-cuit</h3>
+              <p>Et ses copeaux de truffe noir</p>
+              <span class="check_price">
+                <i class="fa-solid fa-check"></i>
+                <span class="price">35€</span>
+              </span>
+            </div>
+
+            <div class="carte_du_menu_entree">
+              <span class="carte_du_menu_text"> </span>
+              <h3>Oeuf au plat</h3>
+              <p>Assaisonné à la truffe sur lit de caviar</p>
+
+              <span class="check_price">
+                <i class="fa-solid fa-check"></i>
+                <span class="price">20€</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="restaurant_subtitle">
+            <h2>Plats</h2>
+            <div class="underline"></div>
+          </div>
+          <menu>
+            <li>
+              <div class="carte_du_menu_entree">
+                <span class="carte_du_menu_text"> </span>
+                <h3>Filet de bœuf aux herbes</h3>
+                <p>Accompagné de sa ribambelle de légumes</p>
+                <span class="check_price">
+                  <i class="fa-solid fa-check"></i>
+                  <span class="price">40€</span>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="carte_du_menu_entree">
+                <span class="carte_du_menu_text"> </span>
+                <h3>Parmentier de queue de bœuf</h3>
+                <p>À la truffe noire sur sa purée de panais</p>
+                <span class="check_price">
+                  <i class="fa-solid fa-check"></i>
+                  <span class="price">35€</span>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="carte_du_menu_entree">
+                <span class="carte_du_menu_text"> </span>
+                <h3>Filet de turbot</h3>
+                <p>Aux agrumes</p>
+                <span class="check_price">
+                  <i class="fa-solid fa-check"></i>
+                  <span class="price">44€</span>
+                </span>
+              </div>
+            </li>
+          </menu>
+
+          <div class="restaurant_subtitle">
+            <h2>desserts</h2>
+            <div class="underline"></div>
+          </div>
+          <menu>
+            <li>
+              <div class="carte_du_menu_entree">
+                <span class="carte_du_menu_text"> </span>
+                <h3>Paris-Brest</h3>
+                <p>Revisité</p>
+                <span class="check_price">
+                  <i class="fa-solid fa-check"></i>
+                  <span class="price">18€</span>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="carte_du_menu_entree">
+                <span class="carte_du_menu_text"> </span>
+                <h3>Macaron au chocolat d'exception</h3>
+                <p>Et glace à la vanille de Madagascar</p>
+                <span class="check_price">
+                  <i class="fa-solid fa-check"></i>
+                  <span class="price">22€</span>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="carte_du_menu_entree">
+                <span class="carte_du_menu_text"> </span>
+                <h3>Mousse au chocolat</h3>
+                <p>Au piment d'Espelette et à la truffe noire</p>
+                <span class="check_price">
+                  <i class="fa-solid fa-check"></i>
+                  <span class="price">23€</span>
+                </span>
+              </div>
+            </li>
+          </menu>
+        </div>
+      </section>
+
+      <div class="commander_btn">
+        <a href="#" class="btn_gradient">
+          <span class="commander_btn_text">Commander</span>
+        </a>
+      </div>
+
+      <footer>
+        <div class="container_footer">
+          <div class="footer_img">
+            <a href="/index.html" class="home">
+              <img
+                src="./Images-et-textes-Ohmyfood/images/logo/ohmyfood@2x.svg"
+                alt="Image du logo"
+                class="logo"
+              />
+            </a>
+          </div>
+          <div class="container_footer_text">
+            <div class="footer_test">
+              <div class="footer_proposer">
+                <i class="fa-solid fa-utensils"></i>
+                <a href="#">Proposer un restaurant</a>
+              </div>
+              <div class="footer_partenaire">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <a href="#">Devenir partenaire</a>
+              </div>
+            </div>
+            <div class="footer_mention_legale">
+              <a href="#">Mentions légales</a>
+              <a href="mailto:contact@ohmyfood.com">Contact</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
