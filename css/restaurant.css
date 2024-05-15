@@ -39,8 +39,7 @@ header {
 .top_image img {
   object-fit: cover;
   width: 100%;
-  /*height: 275px;*/
-  position: relative;
+  position: absolute;
 }
 
 h1 {
@@ -70,15 +69,15 @@ p {
 }
 
 .underline {
-  border: 3px solid #99e2d0;
-  width: 40px;
+  border: 0.15em solid #99e2d0;
+  width: 50px;
   margin: 5px 0 15px 0;
 }
 
 .menu_restaurant {
   z-index: 10;
   position: relative;
-  top: 0.5em;
+  top: 16em;
   border-radius: 4em 4em 0 0;
   background-color: #f6f6f6;
   padding: 10px 20px;
@@ -104,11 +103,7 @@ p {
   padding: 10px 10px 10px 10px;
 }
 
-.menu_container li {
-  list-style: none;
-}
-
-.carte_du_menu_entree {
+.container_button{
   width: 100%;
   height: 70px;
   background-color: white;
@@ -117,11 +112,45 @@ p {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   padding: 15px 15px;
-  font-family: "Roboto";
-  position: relative;
+
 }
 
-.check_price {
+.container_button_text{
+display: flex;
+font-family: "Roboto";
+position: relative;
+}
+
+.container_button_descrition{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+
+.button_title{
+  font-size: 18px;
+  font-weight: 500;
+  
+}
+
+.button_subtitle{
+  font-size: 15px;
+  font-weight: 300;
+  
+}
+
+.button_price{
+  height: 18px;
+  width: 100%;
+  text-align: end;
+  font-size: 0.9rem;
+  font-weight: 500;
+  bottom: 0px;
+  position: absolute;
+}
+
+.button_checkbox{
   background-color: #99e2d0;
   width: 70px;
   height: 70px;
@@ -129,10 +158,22 @@ p {
   align-items: center;
   justify-content: center;
   border-radius: 0px 15px 15px 0px;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+  position: relative;
+  bottom: 4.1em;
+  left: 25.2em;
 }
+
+
+.container_button:hover .button_price {
+  transform: translateX(-60px);
+}
+
+
+.button_checkbox i {
+  color: white;
+  font-size: 20px;
+}
+
 
 .btn_gradient {
   display: flex;
@@ -178,12 +219,11 @@ p {
 
 .container_footer {
   width: auto;
-  height: auto;
+  margin-top: 255px;
   background-color: #353535;
   display: flex;
   flex-direction: column;
   padding: 30px 30px;
-  gap: 16px;
 }
 
 .footer_img img {

@@ -17,6 +17,39 @@
     margin: auto;
   }
 
+
+
+  /****************** Gestion de l'animation ***************/
+.loader {
+  z-index: 1;
+position: absolute;
+  width: 250px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: 
+    radial-gradient(farthest-side,#9356DC 94%,#0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%,#9356DC);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation: spin 3s linear 0ms both;
+  margin: 400px 100px;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    visibility: visible;
+  }
+  100% {
+    transform: rotate(360deg);
+    visibility: hidden;
+  }
+}
+
+
+
+
+  /****************** Gestion de l'entête ***************/
   header {
     display: flex;
     justify-content: center;
