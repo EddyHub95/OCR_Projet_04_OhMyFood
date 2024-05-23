@@ -19,7 +19,7 @@
 
 
 
-  /****************** Gestion de l'animation ***************/
+  /****************** Gestion du loader ***************/
 .loader {
   z-index: 1;
 position: absolute;
@@ -153,13 +153,6 @@ position: absolute;
   }
 
 
-/**** fonctionnement ****/
-/*******
-.container_fonctionnement li {
-    list-style: none;
-}
-******/
-
 .container_fonctionnement {
     width: auto;
     height: auto;
@@ -217,6 +210,9 @@ position: absolute;
     height: 24px;
     position: absolute;
     left: -1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .icone_fonctionnement {
@@ -286,6 +282,30 @@ position: absolute;
     font-family: "Roboto";
   }
 
+/**************** Dev du Heart**************/
+
+.heart {
+  display: flex;
+  font-size: 1.5em;
+  align-items: center;
+  width: 1.5em;
+}
+
+.heart:active .fa-regular{
+  display: none;
+}
+.heart:active .fa-solid{
+  display: block;
+}
+
+.heart .fa-solid{
+  display: none;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
   .new {
     width: 90px;
     height: 30px;
@@ -301,7 +321,7 @@ position: absolute;
     text-align: center;
     font-size: 14px;
     line-height: 27px;
-    font-weight: 60px;
+    font-weight: 600;
   }
 
   .heart{
@@ -312,53 +332,180 @@ position: absolute;
     top: 190px;
   }
 
-
-  .container_footer {
-    width: auto;
-    height: auto;
-    background-color: #353535;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 30px;
-    gap: 16px;
-    
-  }
-
-  .footer_img img{
-  height: 27px;
-  width: 139px;
-  fill: white !important;
-}
-
-  .container_footer_text {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    font-family: "Roboto";
-    color: rgb(255, 255, 255);
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-
-  .footer_proposer a{
-margin-left: 7px;
-text-decoration: none;
-font-family: "Roboto";
-color: rgb(255, 255, 255);
-  }
-
-  .footer_partenaire a{
-    text-decoration: none;
-    font-family: "Roboto";
-    color: rgb(255, 255, 255);
+      footer {
+        width: auto;
+        height: auto;
+        background-color: #353535;
+        display: flex;
+        flex-direction: column;
+        padding: 22px 25px 22px 25px;
+        gap: 16px;
       }
 
-      .footer_mention_legale a {
+      footer img {
+        height: 27px;
+        width: 137px;
+        fill: white !important;
+      }
+
+      footer nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-family: "Roboto";
+        font-size: 15px;
+        font-weight: 300;
+        gap: 7px;
+      }
+
+      footer nav a {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         font-family: "Roboto";
         color: rgb(255, 255, 255);
+        font-size: 16px;
         text-decoration: none;
+        gap: 7px;
+      }
+
+      footer nav .proposer { 
+        width: 198px;
+        height: 19px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      footer nav .partenaire {
+        width: 158px;
+        height: 19px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+ 
+
+      
+      @media screen and (min-width: 769px) {
+
+        .description_title {
+          font-size: 30px;
+        }
+        .container_list {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          gap: 30px;
+        }
+        .container_fonctionnement_btn {
+          width: 100%;
+          flex-shrink: 1;
+        }
+        .container_fonctionnement_text {
+          flex-shrink: 0;
+          margin-left: 13px;
+        }
+        .container_fonctionnement_title {
+          font-size: 23px;
+        }
+        .container_restaurants {
+          padding: 30px 20px 0 20px;
+        }
+        section .card {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .container_restaurants_title {
+          font-size: 23px;
+        }
+        .card {
+          width: 45%;
+          margin: 0;
+        }
+
+        .card_restaurant_title {
+          font-size: 17px;
+          padding: 10px 0 3px 15px;
+        }
+        .card_restaurant_subtitle {
+          font-size: 16px;
+          padding: 0 0 0 15px;
+        }
+        .heart i {
+          top: 83%;
+          right: 2vh;
+          font-size: 25px;
+        }
+        footer {
+          padding: 20px 40px 0 0;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: flex-end;
+          padding: 20px 25px 15px 25px;
+        }
+        footer img {
+          display: flex;
+          margin-bottom: 0;
+        }
+
+        footer nav {
+          display: flex;
+          flex-direction: row;
+          gap: 16px;
+          margin-right: 30px;
+        }
+      }
+
+
+      @media screen and (min-width: 1024px) {
+
+        .container_fonctionnement {
+          padding: 40px 150px;
+          max-width: 1440px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .description_title {
+          font-size: 40px;
+        }
+        .description_subtitle {
+          font-size: 18px;
+        }
+        .container_restaurants {
+          padding: 30px 150px 20px 150px;
+          max-width: 1440px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .container_fonctionnement_text {
+          margin-left: 15px;
+        }
+ 
+        .card {
+          height: 285px;
+        }
+        .card_restaurant_image {
+          height: 210px;
+        }
+        .card_restaurant_title {
+          font-size: 18px;
+          padding: 10px 0 3px 20px;
+        }
+        .card_restaurant_subtitle {
+          font-size: 17px;
+          padding: 0 0 0 20px;
+        }
+        .heart i {
+          top: 83%;
+          right: 2vh;
+          font-size: 25px;
+        }
+        footer {
+          padding: 20px 50px 0 0;
+        }
+        .proposer .partenaire {
+          margin-right: 50px;
+        }
+
       }

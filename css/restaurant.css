@@ -52,8 +52,9 @@ h1 {
 
 h2 {
   font-family: "roboto";
-  font-size: 27px;
+  font-size: 19px;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -82,20 +83,41 @@ p {
   background-color: #f6f6f6;
   padding: 10px 20px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .restaurant_title {
   display: flex;
+  flex: 1;
   justify-content: space-between;
 }
 
 
 .restaurant_heart {
   display: flex;
-  justify-content: space-between;
-  position: absolute;
-  right: 3em;
-  top: 55px;
+  font-size: 2em;
+  align-items: center;
+  width: 2em;
+}
+
+.restaurant_heart:active .fa-regular{
+  display: none;
+}
+.restaurant_heart:active .fa-solid{
+  display: block;
+}
+
+.restaurant_heart .fa-solid{
+  display: none;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.restaurant_heart .fa-regular {
+
 }
 
 
@@ -111,61 +133,62 @@ p {
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  padding: 15px 15px;
-
+  DISPLAY: FLEX;
 }
 
-.container_button_text{
-display: flex;
-font-family: "Roboto";
-position: relative;
-}
+.container_button_text{FLEX: 1;display: flex;font-family: "Roboto";PADDING: 15px 0 15px 15px;OVERFLOW: HIDDEN;}
 
 .container_button_descrition{
   display: flex;
   flex-direction: column;
   text-align: start;
+  OVERFLOW: HIDDEN;
+  FLEX: 1;
 }
 
 
 .button_title{
   font-size: 18px;
   font-weight: 500;
-  
+  OVERFLOW: HIDDEN;
+  TEXT-OVERFLOW: ELLIPSIS;
+  TEXT-WRAP: NOWRAP;
+  WORD-BREAK: BREAK-ALL;
 }
 
 .button_subtitle{
   font-size: 15px;
   font-weight: 300;
-  
+  OVERFLOW: HIDDEN;
+  TEXT-OVERFLOW: ELLIPSIS;
+  TEXT-WRAP: NOWRAP;
+  WORD-BREAK: BREAK-ALL;
 }
 
 .button_price{
-  height: 18px;
-  width: 100%;
   text-align: end;
   font-size: 0.9rem;
   font-weight: 500;
-  bottom: 0px;
-  position: absolute;
+  DISPLAY: FLEX;
+  ALIGN-ITEMS: END;
+  PADDING: 0 .5EM;
 }
 
 .button_checkbox{
   background-color: #99e2d0;
-  width: 70px;
+  width: 0;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0px 15px 15px 0px;
   position: relative;
-  bottom: 4.1em;
-  left: 25.2em;
+  OVERFLOW: HIDDEN;
 }
 
 
-.container_button:hover .button_price {
-  transform: translateX(-60px);
+.container_button:hover .button_checkbox {
+  WIDTH: 70px;
 }
 
 
@@ -182,11 +205,7 @@ position: relative;
   border: 1px solid #9356dc;
   border-radius: 25px;
   padding: 13px;
-  background-image: linear-gradient(
-    179deg,
-    rgb(255, 121, 218) -11.44%,
-    rgb(147, 86, 220) 123.93%
-  );
+  background-image: linear-gradient(179deg, #ff79da -11.44%, rgb(147, 86, 220) 123.93%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border: none;
   width: 220px;
@@ -217,49 +236,58 @@ position: relative;
   align-items: center;
 }
 
-.container_footer {
+
+footer {
   width: auto;
-  margin-top: 255px;
+  height: auto;
   background-color: #353535;
   display: flex;
   flex-direction: column;
-  padding: 30px 30px;
+  padding: 22px 25px 22px 25px;
+  gap: 16px;
+  margin-top: 255px; /****sans ce margin mon footer n'est pas visible ****/
 }
 
-.footer_img img {
+footer img {
   height: 27px;
-  width: 139px;
+  width: 137px;
   fill: white !important;
 }
 
-.container_footer_text {
+footer nav {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   font-family: "Roboto";
-  color: rgb(255, 255, 255);
   font-size: 15px;
   font-weight: 300;
+  gap: 7px;
 }
 
-.footer_proposer a {
-  margin-left: 7px;
-  text-decoration: none;
-  font-family: "Roboto";
-  color: rgb(255, 255, 255);
-}
-
-.footer_partenaire a {
-  text-decoration: none;
-  font-family: "Roboto";
-  color: rgb(255, 255, 255);
-}
-
-.footer_mention_legale a {
+footer nav a {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   font-family: "Roboto";
   color: rgb(255, 255, 255);
+  font-size: 16px;
   text-decoration: none;
+  gap: 7px;
 }
+
+footer nav .proposer { 
+  width: 198px;
+  height: 19px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+footer nav .partenaire {
+  width: 158px;
+  height: 19px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+

@@ -2,10 +2,13 @@ Formation OpenClassRooms.
 
 Projet n°4 : Ohmyfood - Améliorez l'interface d'un site mobile avec des animations CSS
 
+
 Objectifs pédagogiques
 ● Intégrer une maquette en mobile-first
 ● Mettre en œuvre des animations CSS
 ● Versionner son projet avec Git et Github
+
+
 
 
 Consignes Technologique.
@@ -21,8 +24,13 @@ l'intégration du responsive vers le desktop.
 l’avancement et publier le site en ligne plus facilement.
 ● Le site devra être accessible sur GitHub une fois terminé.
 
+
+
 Compatibilité
 ● L’ensemble du site devra être responsive sur mobile, tablette et desktop.
 ● Les pages devront passer la validation W3C en HTML et CSS sans erreur.
 ● Le site doit être parfaitement compatible avec les dernières versions desktop de
 Chrome et Firefox.
+
+
+![alt text](image.png)
