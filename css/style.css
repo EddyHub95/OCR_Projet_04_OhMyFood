@@ -472,6 +472,8 @@ position: absolute;
           display: flex;
           flex-direction: row;
           gap: 16px;
+          padding: 0px 100px 0px 0px;
+
         }
       }
 
@@ -481,7 +483,7 @@ position: absolute;
      
 
         .container_fonctionnement {
-          padding: 20px 50px;
+          padding: 20px 0px;
           max-width: 1024px;
           margin-left: auto;
           margin-right: auto;
@@ -493,7 +495,7 @@ position: absolute;
           font-size: 18px;
         }
         .container_restaurants {
-          padding: 20px 180px 0px 180px;
+          padding: 20px 210px 0px 210px;
           max-width: 1440px;
           margin-left: auto;
           margin-right: auto;
