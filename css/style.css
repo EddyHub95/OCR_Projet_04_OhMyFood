@@ -220,6 +220,12 @@ position: absolute;
     margin-left: -4.2em;
   }
 
+  .icone_fonctionnement_color {
+    color: #9356DC;
+    font-size: 17px;
+    margin-left: -4.2em;
+  }
+
 .container_restaurants{
     background-color: #F3F3F3;
     width: auto;
