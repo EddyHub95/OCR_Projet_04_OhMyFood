@@ -107,6 +107,7 @@ p {
   width: 2em;
 }
 
+
 .restaurant_heart:active .fa-regular{
   display: none;
 }
@@ -120,6 +121,18 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+
+
+/****** A supprimer ??? ******/
+.fa-heart:hover::before{
+  cursor: pointer;
+  color: rgb(210, 127, 191);
+  transition: color 3s ease-out;
+  font-weight: bold;
+}
+
 
 
 .restaurant_heart .fa-regular {
@@ -191,7 +204,6 @@ p {
   position: relative;
   OVERFLOW: HIDDEN;
 }
-
 
 .container_button:hover .button_checkbox {
   WIDTH: 70px;
