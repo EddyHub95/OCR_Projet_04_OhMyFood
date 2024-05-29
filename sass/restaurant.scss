@@ -1,0 +1,331 @@
+/****************** Variables ******************/
+$background-color: #ffffff;
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$tertiary-color: #f6f6f6;
+$highlight-color: #99e2d0;
+$text-color: #353535;
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Shrikhand';
+
+/****************** Mixin pour les polices ******************/
+@mixin font($font-family, $font-weight: normal, $font-size: 16px, $color: #000) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  color: $color;
+}
+
+/****************** Reset CSS ******************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color;
+  min-width: 320px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: auto;
+  height: 63px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  color: black;
+}
+
+/* .top_image {
+  position: relative;
+  width: 100%;
+} */
+
+.top_image img {
+  object-fit: cover;
+  object-position: 0 60%;
+  width: 100%;
+  height: 310px;
+  position: absolute;
+}
+
+h1 {
+  padding: 30px 20px;
+  font-family: $font-secondary;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+h2 {
+  @include font($font-primary, 300, 19px);
+  text-transform: uppercase;
+}
+
+h3 {
+  @include font($font-primary, 500, 18px);
+}
+
+p {
+  @include font($font-primary, 300, 15px);
+}
+
+.underline {
+  border: 0.15em solid $highlight-color;
+  width: 50px;
+  margin: 5px 0 15px 0;
+}
+
+.menu_restaurant {
+  z-index: 10;
+  position: relative;
+  top: 16em;
+  border-radius: 4em 4em 0 0;
+  background-color: $tertiary-color;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant_title {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.restaurant_heart {
+  display: flex;
+  font-size: 2em;
+  align-items: center;
+  width: 2em;
+
+  &:active .fa-regular {
+    display: none;
+  }
+
+  &:active .fa-solid {
+    display: block;
+  }
+
+  .fa-solid {
+    display: none;
+    background: -webkit-linear-gradient($primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* A supprimer ??? */
+.fa-heart:hover::before {
+  cursor: pointer;
+  color: rgb(210, 127, 191);
+  transition: color 3s ease-out;
+  font-weight: bold;
+}
+
+.menu_container {
+  padding: 10px;
+}
+
+.container_button {
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.container_button_text {
+  flex: 1;
+  display: flex;
+  font-family: $font-primary;
+  padding: 15px 0 15px 15px;
+  overflow: hidden;
+}
+
+.container_button_descrition {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  overflow: hidden;
+  flex: 1;
+}
+
+.button_title {
+  font-size: 18px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  word-break: break-all;
+}
+
+.button_subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  word-break: break-all;
+}
+
+.button_price {
+  text-align: end;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: end;
+  padding: 0 0.5em;
+}
+
+.button_checkbox {
+  background-color: $highlight-color;
+  width: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 15px 15px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container_button:hover .button_checkbox {
+  width: 70px;
+}
+
+.button_checkbox i {
+  color: white;
+  font-size: 20px;
+}
+
+.btn_gradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $primary-color;
+  border-radius: 25px;
+  padding: 13px;
+  background-image: linear-gradient(179deg, $secondary-color -11.44%, $primary-color 123.93%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border: none;
+  width: 220px;
+  height: 53px;
+  line-height: 30px;
+  font-family: $font-primary;
+  text-decoration: none;
+
+  &:hover {
+    background-image: linear-gradient(179deg, lighten($secondary-color, 10%) -11.44%, lighten($primary-color, 10%) 123.93%);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.commander_btn {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 30px 0;
+}
+
+.commander_btn_text {
+  color: white;
+  font-size: 16px;
+  align-items: center;
+}
+
+footer {
+  width: auto;
+  height: auto;
+  background-color: $text-color;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 25px;
+  gap: 16px;
+  margin-top: 255px; /*sans ce margin mon footer n'est pas visible */
+
+  img {
+    height: 27px;
+    width: 137px;
+    fill: white !important;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include font($font-primary, 300, 15px);
+    gap: 7px;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      gap: 7px;
+    }
+
+    .proposer, .partenaire {
+      height: 19px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .restaurant_title {
+    text-align: center;
+    padding: 50px 0 0 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .description_title {
+    font-size: 40px;
+  }
+
+  .description_subtitle {
+    font-size: 18px;
+  }
+
+  .menu_restaurant {
+    padding: 0px 210px;
+    width: 80%;
+    left: 150px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    padding: 40px 40px 30px 0;
+
+    img {
+      margin-bottom: 0;
+    }
+
+    nav {
+      flex-direction: row;
+      gap: 16px;
+      padding: 0px 100px 0px 0px;
+    }
+  }
+}
