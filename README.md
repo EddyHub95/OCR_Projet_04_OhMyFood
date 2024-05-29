@@ -3,34 +3,32 @@ Formation OpenClassRooms.
 Projet n°4 : Ohmyfood - Améliorez l'interface d'un site mobile avec des animations CSS
 
 
-Objectifs pédagogiques
-● Intégrer une maquette en mobile-first
-● Mettre en œuvre des animations CSS
-● Versionner son projet avec Git et Github
+Description
 
+OhMyFood est une plateforme web innovante qui répertorie les menus de restaurants gastronomiques à Paris. Les clients peuvent non seulement consulter les menus, mais aussi composer leur repas à l'avance pour éviter les temps d'attente au restaurant.
 
+Ce projet a été développé en suivant le principe du "mobile first" pour garantir une expérience utilisateur optimale sur tous les appareils, y compris mobiles, tablettes et desktops. Il intègre également des animations pour rendre l'expérience utilisateur plus dynamique et engageante.
+Maquettes et Prototype
 
+Les maquettes mobile et desktop du site, ainsi que le prototype complet, sont disponibles sur Figma. Vous pouvez les consulter pour avoir une meilleure compréhension visuelle du projet.
+Technologies Utilisées
 
-Consignes Technologique.
-● Le développement doit se faire en CSS avec Sass, sans JavaScript.
-● Les fichiers sources .scss ainsi que le code compilé CSS doivent être disponibles dans
-un ou plusieurs fichiers dédiés.
-● Le site devra être réalisé en adoptant le Mobile First, c’est-à-dire qu’il faudra
-d’abord réaliser l'intégration de la maquette mobile, puis tablette, et enfin
-l'intégration du responsive vers le desktop.
-● Aucun framework ne devra être utilisé (comme Bootstrap par exemple).
-● Aucun code CSS ne doit être appliqué via un attribut style dans une balise HTML.
-● Tout le code doit être versionné sur GitHub avec des commits réguliers pour suivre
-l’avancement et publier le site en ligne plus facilement.
-● Le site devra être accessible sur GitHub une fois terminé.
+    HTML5
+    CSS3
+    SASS
+    Figma (Pour le prototype)
 
+Fonctionnalités Principales
 
+    Consultation des menus de restaurants gastronomiques.
+    Composition du menu à l'avance.
+    Système de réservation en ligne.
+    Interface responsive pour une expérience optimale sur tous les appareils.
+    Animations interactives pour une expérience utilisateur engageante.
 
-Compatibilité
-● L’ensemble du site devra être responsive sur mobile, tablette et desktop.
-● Les pages devront passer la validation W3C en HTML et CSS sans erreur.
-● Le site doit être parfaitement compatible avec les dernières versions desktop de
-Chrome et Firefox.
+Nous espérons que vous apprécierez l'expérience OhMyFood !
+
+Bonne utilisation et bon appétit !
 
 
 ![alt text](image.png)
