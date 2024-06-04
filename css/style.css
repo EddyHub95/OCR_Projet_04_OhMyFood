@@ -12,14 +12,46 @@
 
 body {
   background-color: #ffffff;
-  min-width: 320px;
-  max-width: 1440px;
+  /* min-width: 320px; */
+  /* max-width: 1440px; */
   margin: auto;
 }
 
-/****************** Chagement de la page ***************/
+.main-wrapper{
+  max-width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/****************** Chargement de la page ***************/
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+    display: none;
+  }
+}
+
+.overlay{
+  background-color: #000000c7;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: fadeOut 3s ease-in-out 0s 1 forwards;
+}
 .loader {
-  z-index: 1;
   position: absolute;
   width: 250px;
   aspect-ratio: 1;
@@ -29,7 +61,6 @@ body {
     conic-gradient(#0000 30%, #9356dc);
   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
   animation: spin 3s linear 0ms both;
-  margin: 400px 100px;
 }
 
 @keyframes spin {
@@ -180,17 +211,14 @@ header {
 
 .container_fonctionnement_btn {
   display: flex;
-  align-items: center;
   background-color: #f6f6f6;
-  margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   font-family: "Roboto";
-  margin: 10px 0;
-  height: 72px;
-  padding: 10px 120px;
   border: none;
   position: relative;
+  padding: 2em 4em 2em 2em;
+  cursor: pointer;
 }
 
 .container_fonctionnement_text {
@@ -219,13 +247,14 @@ header {
 .icone_fonctionnement {
   color: #7e7e7e;
   font-size: 17px;
-  margin-left: -4.2em;
 }
 
 .icone_fonctionnement_color {
-  color: #9356dc;
   font-size: 17px;
-  margin-left: -4.2em;
+}
+
+.container_fonctionnement_btn:active .icone_fonctionnement_color {
+  color: #9356dc;
 }
 
 /******  Section restaurant  ******/
@@ -296,7 +325,7 @@ section a {
   font-size: 1.5em;
   justify-content: space-between;
   position: absolute;
-  right: 2em;
+  right: 1em;
   top: 190px;
 }
 
@@ -346,8 +375,7 @@ footer {
 }
 
 footer img {
-  height: 25px;
-  width: 135px;
+  height: 20px;
   fill: white !important;
 }
 
@@ -361,9 +389,19 @@ footer nav {
   gap: 7px;
 }
 
-footer nav a {
+footer nav .nav-container:first-child{
+  font-weight: 400;
+}
+
+footer nav .nav-container{
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+footer nav a {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   font-family: "Roboto";
   color: rgb(255, 255, 255);
@@ -372,19 +410,10 @@ footer nav a {
   gap: 7px;
 }
 
-footer nav .proposer {
-  width: 198px;
-  height: 19px;
-  font-size: 16px;
-  font-weight: 500;
+footer nav a i{
+  width: 18px;
 }
 
-footer nav .partenaire {
-  width: 158px;
-  height: 19px;
-  font-size: 16px;
-  font-weight: 500;
-}
 
 @media screen and (min-width: 769px) {
   .description_title {
@@ -398,10 +427,6 @@ footer nav .partenaire {
   }
 
   .container_fonctionnement_btn {
-    width: 100%;
-    margin: 10px 0;
-    height: 72px;
-    padding: 0px 95px;
   }
   .container_fonctionnement_text {
     flex-shrink: 0;
@@ -453,7 +478,9 @@ footer nav .partenaire {
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-end;
-    padding: 40px 40px 30px 0;
+    padding: 2em 1.5em;
+    gap: 3em;
+    height: 8em;
   }
   footer img {
     display: flex;
@@ -463,8 +490,13 @@ footer nav .partenaire {
   footer nav {
     display: flex;
     flex-direction: row;
+    gap: 3em;
+  }
+
+  footer nav .nav-container{
+    display: flex;
+    flex-direction: row;
     gap: 16px;
-    padding: 0px 100px 0px 0px;
   }
 }
 
@@ -482,10 +514,8 @@ footer nav .partenaire {
     font-size: 18px;
   }
   .container_restaurants {
-    padding: 20px 210px 0px 210px;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    padding: 2em;
   }
 
   .container_fonctionnement_text {

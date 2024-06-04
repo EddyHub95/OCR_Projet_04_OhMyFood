@@ -34,7 +34,9 @@
 
   <body>
     <!-- Chagement de la page -->
-    <div class="loader"></div>
+    <div class="overlay">
+      <div class="loader"></div>
+    </div>
 
     <!--Section d'entête-->
     <header>
@@ -65,6 +67,8 @@
 
       <!-- Section fonctionnement -->
       <section class="container_fonctionnement">
+        <div class="main-wrapper">
+          
         <h2 class="container_fonctionnement_title">Fonctionnement</h2>
 
         <div class="container_list">
@@ -98,11 +102,14 @@
             >
           </button>
         </div>
+        </div>
       </section>
 
       <!-- Section Restaurants -->
       <section class="container_restaurants">
-        <h2 class="container_restaurants_title">Restaurants</h2>
+        <div class="main-wrapper">
+          
+        <h2 class="container_restaurants_title" id="restaurants">Restaurants</h2>
         <div class="container_restaurants_card">
           <div class="card">
             <a href="./la-palette-du-gout.html" class="card_restaurant">
@@ -180,6 +187,7 @@
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       <!-- Section footer -->
@@ -192,18 +200,22 @@
         </a>
 
         <nav>
-          <a class="proposer" href="#">
-            <i class="fa-solid fa-utensils"></i>
-            Proposer un restaurant
-          </a>
+          <div class="nav-container">
+            <a class="proposer" href="#">
+              <i class="fa-solid fa-utensils"></i>
+              Proposer un restaurant
+            </a>
+  
+            <a class="partenaire" href="#">
+              <i class="fa-solid fa-handshake-angle"></i>
+              Devenir partenaire
+            </a>
+          </div>
 
-          <a class="partenaire" href="#">
-            <i class="fa-solid fa-handshake-angle"></i>
-            Devenir partenaire
-          </a>
-
-          <a href="#"> Mentions légales </a>
-          <a href="mailto:contact@ohmyfood.com"> Contact </a>
+          <div class="nav-container">
+            <a href="#"> Mentions légales </a>
+            <a href="mailto:contact@ohmyfood.com"> Contact </a>
+          </div>
         </nav>
       </footer>
     </main>
