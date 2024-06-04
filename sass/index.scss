@@ -2,23 +2,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/****************** Variables ******************/
+// Variables
 $background-color: #ffffff;
 $primary-color: #9356dc;
 $secondary-color: #ff79da;
-$tertiary-color: #f6f6f6;
-$text-color: #353535;
-$font-primary: 'Roboto', sans-serif;
+$tertiary-color: #99e2d0;
+$dark-color: #353535;
+$light-color: #e4e4e4;
+$gray-color: #f6f6f6;
+$black-color: #000000c7;
 
-/****************** Mixin pour les polices ******************/
-@mixin font($font-family, $font-weight: normal, $font-size: 16px, $color: #000) {
-  font-family: $font-family;
-  font-weight: $font-weight;
-  font-size: $font-size;
-  color: $color;
-}
+$font-family: 'Roboto', sans-serif;
+$font-size-base: 16px;
+$font-size-large: 24px;
+$font-size-small: 14px;
 
-/****************** Reset CSS ******************/
+$border-radius: 15px;
+$box-shadow: 0 0 5px 0;
+$box-shadow-dark: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+$box-shadow-light: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+$animation-duration: 3s;
+
+// Global Styles
 * {
   margin: 0;
   padding: 0;
@@ -27,14 +33,45 @@ $font-primary: 'Roboto', sans-serif;
 
 body {
   background-color: $background-color;
-  min-width: 320px;
-  max-width: 1440px;
   margin: auto;
+  font-family: $font-family;
 }
 
-/****************** Chagement de la page ***************/
+// Main Wrapper
+.main-wrapper {
+  max-width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+// Page Loading Animation
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+    display: none;
+  }
+}
+
+.overlay {
+  background-color: $black-color;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut $animation-duration ease-in-out 0s 1 forwards;
+}
+
 .loader {
-  z-index: 1;
   position: absolute;
   width: 250px;
   aspect-ratio: 1;
@@ -42,8 +79,7 @@ body {
   background: radial-gradient(farthest-side, $primary-color 94%, #0000) top/8px 8px no-repeat,
     conic-gradient(#0000 30%, $primary-color);
   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
-  animation: spin 3s linear 0ms both;
-  margin: 400px 100px;
+  animation: spin $animation-duration linear 0ms both;
 }
 
 @keyframes spin {
@@ -57,17 +93,17 @@ body {
   }
 }
 
-/****** Gestion de l'entête / Description du restaurant ******/
+// Header and Restaurant Description
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: $background-color;
   width: auto;
   height: 63px;
-  box-shadow: 0 0 5px 0;
+  box-shadow: $box-shadow;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: $box-shadow-dark;
 }
 
 .location {
@@ -76,12 +112,12 @@ header {
   align-items: center;
   width: auto;
   height: 50px;
-  background-color: #e4e4e4;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background-color: $light-color;
+  box-shadow: $box-shadow-light;
   position: sticky;
 
   i {
-    color: $text-color;
+    color: $dark-color;
     padding: 5px;
     margin-left: 70px;
   }
@@ -89,8 +125,11 @@ header {
   input {
     outline: none;
     border: none;
-    background-color: #e4e4e4;
-    @include font($font-primary, bold, 16px, $text-color);
+    background-color: $light-color;
+    font-family: $font-family;
+    color: $dark-color;
+    font-size: $font-size-base;
+    font-weight: bold;
     margin-left: 5px;
   }
 }
@@ -98,106 +137,113 @@ header {
 .description {
   width: auto;
   height: auto;
-  background-color: $tertiary-color;
+  background-color: $gray-color;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: $font-family;
   padding: 60px;
   text-align: center;
   align-items: center;
 
   span {
-    @include font($font-primary, normal, 16px, white);
+    font-family: $font-family;
+    color: $background-color;
+    align-items: center;
   }
 
-  .description_title {
-    @include font($font-primary, normal, 25px);
+  &__title {
+    font-size: 25px;
     padding: 10px;
+    font-family: $font-family;
   }
 
-  .description_subtitle {
+  &__subtitle {
     font-weight: 300;
-  }
-
-  .explorer_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-  }
-
-  .explorer_btn_text {
-    @include font($font-primary, normal, 16px, white);
-  }
-
-  .btn_gradient {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid $primary-color;
-    border-radius: 25px;
-    padding: 13px;
-    background-image: linear-gradient(179deg, $secondary-color -11.44%, $primary-color 123.93%);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border: none;
-    width: 220px;
-    height: 53px;
-    line-height: 30px;
-    @include font($font-primary);
-    text-decoration: none;
-
-    &:hover {
-      background-image: linear-gradient(179deg, lighten($secondary-color, 10%) -11.44%, lighten($primary-color, 10%) 123.93%);
-      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
-    }
   }
 }
 
-/******  Section fonctionnement  ******/
+.explorer_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  &__text {
+    color: $background-color;
+    font-size: $font-size-base;
+    align-items: center;
+  }
+}
+
+.btn_gradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $primary-color;
+  border-radius: 25px;
+  padding: 13px;
+  background-image: linear-gradient(179deg, $secondary-color -11.44%, $primary-color 123.93%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border: none;
+  width: 220px;
+  height: 53px;
+  line-height: 30px;
+  font-family: $font-family;
+  text-decoration: none;
+
+  &:hover {
+    background-image: linear-gradient(179deg, lighten($secondary-color, 10%) -11.44%, lighten($primary-color, 10%) 123.93%);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+// Functioning Section
 .container_fonctionnement {
   width: auto;
   height: auto;
-  background-color: white;
+  background-color: $background-color;
   padding: 40px 20px;
   margin-top: 10px;
 
-  .container_fonctionnement_title {
-    @include font($font-primary, bold, 24px);
+  &__title {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: $font-size-large;
     padding: 20px 0px;
   }
 
-  .container_list {
+  &__list {
     padding: 0px 0px 10px 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
 
-  .container_fonctionnement_btn {
+  &__btn {
     display: flex;
-    align-items: center;
-    background-color: $tertiary-color;
-    margin-bottom: 20px;
-    border-radius: 20px;
+    background-color: $gray-color;
+    border-radius: $border-radius;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    @include font($font-primary);
-    margin: 10px 0;
-    height: 72px;
-    padding: 10px 120px;
+    font-family: $font-family;
     border: none;
     position: relative;
+    padding: 2em 4em 2em 2em;
+    cursor: pointer;
 
-    .container_fonctionnement_text {
+    &__text {
       margin-left: 30px;
       line-height: 19px;
+      font-family: $font-family;
       font-weight: 500;
+      font-size: $font-size-base;
     }
 
-    .container_fonctionnement_number {
+    &__number {
       border-radius: 100%;
       padding: 3px 7px;
       background-color: $primary-color;
-      color: white;
+      color: $background-color;
       font-size: 12px;
       width: 24px;
       height: 24px;
@@ -211,125 +257,283 @@ header {
     .icone_fonctionnement {
       color: #7e7e7e;
       font-size: 17px;
-      margin-left: -4.2em;
 
-      &.icone_fonctionnement_color {
+      &_color {
+        font-size: 17px;
+      }
+
+      &:active &_color {
         color: $primary-color;
       }
     }
   }
 }
 
-/******  Section restaurant  ******/
+// Restaurant Section
 .container_restaurants {
   background-color: #f3f3f3;
   width: auto;
   height: auto;
   padding: 50px 15px;
 
-  .container_restaurant_card {
+  &__card {
     padding: 20px 0;
   }
 
-  .container_restaurants_title {
+  &__title {
     padding-bottom: 20px;
-    @include font($font-primary, bold, 24px);
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: $font-size-large;
   }
+}
 
-  .card {
+.card {
+  width: 100%;
+  height: 251px;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-bottom: 20px;
+
+  &__restaurant {
+    object-fit: cover;
     width: 100%;
-    height: 251px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin-bottom: 20px;
+    height: 170px;
+    border-radius: $border-radius 0 0 0;
 
-    .card_restaurant {
+    &_image {
       object-fit: cover;
       width: 100%;
       height: 170px;
-      border-radius: 15px 15px 0 0;
+      border-radius: $border-radius 0 0 0;
     }
 
-    .card_restaurant_image {
-      object-fit: cover;
-      width: 100%;
-      height: 170px;
-      border-radius: 15px 15px 0 0;
-    }
-
-    .card_restaurant_title {
-      @include font($font-primary, bold, 16px);
+    &_title {
+      font-family: $font-family;
+      font-weight: 700;
+      font-size: 16px;
       padding: 10px 10px 5px 10px;
     }
 
-    .card_restaurant_subtitle {
-      @include font($font-primary, normal, 16px);
+    &_subtitle {
+      font-family: $font-family;
       padding: 0 10px;
+      font-size: 16px;
+    }
+  }
+}
+
+section a {
+  text-decoration: none;
+  color: $dark-color;
+  font-family: $font-family;
+  font-size: 16px;
+
+  .heart {
+    i {
+      color: $tertiary-color;
+      font-size: 20px;
+      position: absolute;
+      top: 80%;
+      right: 2vh;
+      background-color: $background-color;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 2px;
+      padding: 2px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 27px;
+      font-weight: 600;
+    }
+  }
+}
+
+// Footer
+footer {
+  width: auto;
+  height: auto;
+  background-color: $dark-color;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 25px;
+  gap: 16px;
+
+  img {
+    height: 20px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: $font-family;
+    font-size: 15px;
+    font-weight: 300;
+    gap: 7px;
+
+    .nav-container:first-child {
+      font-weight: 400;
+    }
+
+    .nav-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     a {
+      display: flex;
+      flex-direction: row;
+      font-family: $font-family;
+      color: $background-color;
+      font-size: 16px;
       text-decoration: none;
-      color: black;
-    }
-
-    .heart {
-      display: flex;
-      font-size: 1.5em;
-      justify-content: space-between;
-      position: absolute;
-      right: 2em;
-      top: 190px;
-
-      &:active .fa-regular {
-        display: none;
-      }
-
-      &:active .fa-solid {
-        display: block;
-      }
-
-      .fa-regular,
-      .fa-solid {
-        &.fa-heart {
-          color: $secondary-color;
-        }
-      }
-    }
-
-    .icon-wrapper {
-      position: absolute;
-      top: 190px;
-      right: 2em;
-      display: flex;
-      justify-content: space-between;
+      gap: 7px;
 
       i {
-        color: $secondary-color;
-        padding-left: 10px;
+        width: 18px;
       }
     }
   }
 }
 
-/****** Footer ******/
-footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  background-color: white;
-  height: 70px;
-  border-top: 1px solid #dcdcdc;
+@media screen and (min-width: 769px) {
+  .description__title {
+    font-size: 30px;
+  }
 
-  .footer_link {
-    @include font($font-primary, normal, 14px, #6f6f6f);
-    padding: 0 10px;
-    text-decoration: none;
+  .container_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
 
-    &:hover {
-      text-decoration: underline;
+  .container_fonctionnement__text {
+    flex-shrink: 0;
+    margin-left: 13px;
+  }
+
+  .container_fonctionnement__title {
+    font-size: 23px;
+  }
+
+  .container_restaurants {
+    padding: 30px 20px 0 20px;
+  }
+
+  .container_restaurants__card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 0 0 30px;
+  }
+
+  section .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .container_restaurants__title {
+    font-size: 23px;
+  }
+
+  .card {
+    width: 45%;
+    margin: 0;
+  }
+
+  .card__restaurant__title {
+    font-size: 17px;
+    padding: 10px 0 3px 15px;
+  }
+
+  .card__restaurant__subtitle {
+    font-size: 16px;
+    padding: 0 0 0 15px;
+  }
+
+  .heart i {
+    top: 83%;
+    right: 2vh;
+    font-size: 25px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    padding: 2em 1.5em;
+    gap: 3em;
+    height: 8em;
+  }
+
+  footer img {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+
+    .nav-container {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container_fonctionnement {
+    padding: 20px 0;
+    max-width: 1024px;
+    margin: auto;
+  }
+
+  .description__title {
+    font-size: 40px;
+  }
+
+  .description__subtitle {
+    font-size: 18px;
+  }
+
+  .container_restaurants {
+    margin: auto;
+    padding: 2em;
+  }
+
+  .container_fonctionnement__text {
+    margin-left: 15px;
+  }
+
+  .card {
+    width: 45%;
+    height: 238px;
+  }
+
+  .card__restaurant__title {
+    font-size: 18px;
+    padding: 10px 0 3px 20px;
+  }
+
+  .card__restaurant__subtitle {
+    font-size: 17px;
+    padding: 0 0 0 20px;
+  }
+
+  .heart i {
+    top: 83%;
+    right: 2vh;
+    font-size: 25px;
   }
 }

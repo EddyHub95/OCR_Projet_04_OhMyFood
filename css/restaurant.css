@@ -9,8 +9,6 @@
 
 body {
   background-color: #ffffff;
-  /* min-width: 320px; */
-  /* max-width: 1440px; */
   margin: auto;
 }
 
@@ -39,10 +37,7 @@ header {
   color: black;
 }
 
-/* .top_image {
-  position: relative;
-  width: 100%;
-} */
+
 .top_image img {
   object-fit: cover;
   object-position: 0 60%;
