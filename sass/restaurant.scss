@@ -259,6 +259,62 @@ p {
   }
 }
 
+// Animation des plats
+.container_button {
+  animation: fondu 1s forwards;
+  opacity: 0;
+  &_entree {
+      animation-delay: 0s;
+  }
+  &_plat {
+      animation-delay: 0.5s;
+  }
+  &_dessert {
+      animation-delay: 1s;
+  }
+  
+}
+
+@keyframes fondu {
+from {
+    opacity: 0;
+    transform: scale(0);
+}
+to {
+    opacity: 1;
+    transform: scale(1);
+}
+}
+
+
+
+.restaurant_subtitle {
+  animation: swipe 1s forwards;
+  opacity: 0;
+  &_start {
+      animation-delay: 0s;
+  }
+  &_middle {
+      animation-delay: 0.5s;
+  }
+  &_end {
+      animation-delay: 1s;
+  }
+}
+
+@keyframes swipe {
+  from {
+      opacity: 0;
+      transform: translateX(-100px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+
+
 // Footer styles
 footer {
   width: auto;
