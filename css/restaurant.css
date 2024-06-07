@@ -1,6 +1,4 @@
-/****************** Variables ******************/
-/****************** Mixin pour les polices ******************/
-/****************** Reset CSS ******************/
+
 * {
   margin: 0;
   padding: 0;
@@ -112,6 +110,7 @@ p {
 .restaurant_heart:active .fa-solid {
   display: block;
 }
+
 .restaurant_heart .fa-solid {
   display: none;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
@@ -119,11 +118,10 @@ p {
   -webkit-text-fill-color: transparent;
 }
 
-/* A supprimer ??? */
 .fa-heart:hover::before {
   cursor: pointer;
   color: rgb(210, 127, 191);
-  transition: color 3s ease-out;
+  transition: color 1.5s ease-out;
   font-weight: bold;
 }
 
@@ -194,8 +192,9 @@ p {
   justify-content: center;
   border-radius: 0 15px 15px 0;
   position: relative;
-  overflow: hidden;
+  overflow: hidden;  
 }
+
 
 .container_button:hover .button_checkbox {
   width: 70px;
@@ -257,40 +256,15 @@ p {
 
 @keyframes fondu {
   from {
-      opacity: 0;
-      transform: scale(0);
-  }
-  to {
-      opacity: 1;
-      transform: scale(1);
-  }
-}
-
-
-.restaurant_subtitle {
-  animation: swipe 1s forwards;
-  opacity: 0;
-}
-.restaurant_subtitle_start {
-  animation-delay: 0s;
-}
-.restaurant_subtitle_middle {
-  animation-delay: 0.5s;
-}
-.restaurant_subtitle_end {
-  animation-delay: 1s;
-}
-
-@keyframes swipe {
-  from {
     opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    transform: translateY(20px);
 }
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
 
 
 /******  Gestion du footer  ******/
@@ -350,6 +324,7 @@ footer nav a i{
     padding: 50px 0 0 0;
   }
 
+
   footer {
     display: flex;
     flex-direction: row-reverse;
@@ -392,4 +367,3 @@ footer nav a i{
   }
 }
 
-/*# sourceMappingURL=restaurant.css.map */

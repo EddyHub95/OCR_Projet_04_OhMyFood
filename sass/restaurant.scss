@@ -1,16 +1,18 @@
-// Variables
-$bg-color-white: #ffffff;
-$bg-color-grey: #f6f6f6;
-$color-black: #000;
-$color-gradient-start: #ff79da;
-$color-gradient-end: #9356dc;
-$color-hover-gradient-start: #fface8;
-$color-hover-gradient-end: #ae80e5;
-$box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-$font-shrikhand: "Shrikhand";
-$font-roboto: "Roboto", sans-serif;
+/****************** Variables***************/
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray: #e4e4e4;
+$color-dark-gray: #353535;
+$color-purple: #9356dc;
+$color-pink: rgb(255, 121, 218);
+$color-light-green: #99e2d0;
+$color-dark-green: #008766;
+$color-gradient: linear-gradient(179deg, rgb(255, 121, 218) -11.44%, rgb(147, 86, 220) 123.93%);
+$color-gradient-hover: linear-gradient(179deg, rgb(252, 132, 218) -11.44%, rgb(155, 99, 223) 123.93%);
+$font-family-shrikhand: "Shrikhand";
+$font-family-roboto: "Roboto";
 
-// Global styles
+/****************** Page***************/
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +20,7 @@ $font-roboto: "Roboto", sans-serif;
 }
 
 body {
-  background-color: $bg-color-white;
+  background-color: $color-white;
   margin: auto;
 }
 
@@ -29,47 +31,48 @@ body {
   flex-direction: column;
 }
 
-// Header styles
+/****** Gestion de l'entête ******/
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: $color-white;
   width: auto;
   height: 63px;
-  box-shadow: $box-shadow;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   position: relative;
-
-  .back {
-    position: absolute;
-    left: 20px;
-    font-size: 20px;
-    color: black;
-  }
 }
 
-// Image styles
-.top_image {
-  img {
-    object-fit: cover;
-    object-position: 0 60%;
-    width: 100%;
-    height: 310px;
-    position: absolute;
-  }
+.back {
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  color: $color-black;
 }
 
-// Typography
+/****** Gestion de l'image principale ******/
+.top_image img {
+  object-fit: cover;
+  object-position: 0 60%;
+  width: 100%;
+  height: 310px;
+  position: absolute;
+}
+
+/****** Gestion des titres ******/
 h1 {
   padding: 30px 20px;
-  font-family: $font-shrikhand;
+  font-family: $font-family-shrikhand;
   font-size: 28px;
   font-style: italic;
   font-weight: 400;
 }
 
+h2, h3, p {
+  font-family: $font-family-roboto;
+}
+
 h2 {
-  font-family: $font-roboto;
   font-weight: 300;
   font-size: 19px;
   color: $color-black;
@@ -77,295 +80,267 @@ h2 {
 }
 
 h3 {
-  font-family: $font-roboto;
   font-weight: 500;
   font-size: 18px;
   color: $color-black;
 }
 
 p {
-  font-family: $font-roboto;
   font-weight: 300;
   font-size: 15px;
   color: $color-black;
 }
 
+/****** Ligne soulignée ******/
 .underline {
-  border: 0.15em solid #99e2d0;
+  border: 0.15em solid $color-light-green;
   width: 50px;
   margin: 5px 0 15px 0;
 }
 
-// Menu styles
+/****** Menu restaurant ******/
 .menu_restaurant {
   z-index: 10;
   position: relative;
   top: 16em;
   border-radius: 4em 4em 0 0;
-  background-color: $bg-color-grey;
+  background-color: #f6f6f6;
   padding: 10px 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
+}
 
-  .restaurant_title {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-  }
+/****** Titre et coeur du restaurant ******/
+.restaurant_title {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
 
-  .restaurant_heart {
-    display: flex;
-    font-size: 2em;
-    align-items: center;
-    width: 2em;
+.restaurant_heart {
+  display: flex;
+  font-size: 2em;
+  align-items: center;
+  width: 2em;
+}
 
-    &.active .fa-regular {
-      display: none;
-    }
+.restaurant_heart:active .fa-regular {
+  display: none;
+}
 
-    &.active .fa-solid {
-      display: block;
-    }
+.restaurant_heart:active .fa-solid {
+  display: block;
+}
 
-    .fa-solid {
-      display: none;
-      background: -webkit-linear-gradient($color-gradient-end, $color-gradient-start);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
+.restaurant_heart .fa-solid {
+  display: none;
+  background: -webkit-linear-gradient($color-purple, $color-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-heart:hover::before {
   cursor: pointer;
   color: rgb(210, 127, 191);
-  transition: color 3s ease-out;
+  transition: color 1.5s ease-out;
   font-weight: bold;
 }
 
+/****** Container des boutons ******/
 .menu_container {
   padding: 10px;
 }
 
-// Button styles
 .container_button {
   width: 100%;
   height: 70px;
-  background-color: white;
+  background-color: $color-white;
   border: none;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   display: flex;
+  animation: fondu 1s forwards;
+  opacity: 0;
+}
 
-  &.text {
-    flex: 1;
-    display: flex;
-    font-family: $font-roboto;
-    padding: 15px 0 15px 15px;
-    overflow: hidden;
+.container_button_entree {
+  animation-delay: 0s;
+}
+
+.container_button_plat {
+  animation-delay: 0.5s;
+}
+
+.container_button_dessert {
+  animation-delay: 1s;
+}
+
+@keyframes fondu {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  &.description {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    overflow: hidden;
-    flex: 1;
-  }
-
-  .title {
-    font-size: 18px;
-    font-weight: 500;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-    word-break: break-all;
-  }
-
-  .subtitle {
-    font-size: 15px;
-    font-weight: 300;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-    word-break: break-all;
-  }
-
-  .price {
-    text-align: end;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: flex;
-    align-items: end;
-    padding: 0 0.5em;
-  }
-
-  .checkbox {
-    background-color: #99e2d0;
-    width: 0;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 15px 15px 0;
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-      width: 70px;
-    }
-
-    i {
-      color: white;
-      font-size: 20px;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-// Button gradient styles
+/****** Texte du bouton ******/
+.container_button_text {
+  flex: 1;
+  display: flex;
+  font-family: $font-family-roboto;
+  padding: 15px 0 15px 15px;
+  overflow: hidden;
+}
+
+.container_button_descrition {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  overflow: hidden;
+  flex: 1;
+}
+
+.button_title {
+  font-size: 18px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  word-break: break-all;
+}
+
+.button_subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  word-break: break-all;
+}
+
+.button_price {
+  text-align: end;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: end;
+  padding: 0 0.5em;
+}
+
+/****** Checkbox du bouton ******/
+.button_checkbox {
+  background-color: $color-light-green;
+  width: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 15px 15px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container_button:hover .button_checkbox {
+  width: 70px;
+}
+
+.button_checkbox i {
+  color: $color-white;
+  font-size: 20px;
+}
+
+/****** Bouton Gradient ******/
 .btn_gradient {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid $color-gradient-end;
+  border: 1px solid $color-purple;
   border-radius: 25px;
   padding: 13px;
-  background-image: linear-gradient(179deg, $color-gradient-start -11.44%, $color-gradient-end 123.93%);
+  background-image: $color-gradient;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border: none;
   width: 220px;
   height: 53px;
   line-height: 30px;
-  font-family: $font-roboto;
+  font-family: $font-family-roboto;
   text-decoration: none;
+}
 
-  &:hover {
-    background-image: linear-gradient(179deg, $color-hover-gradient-start -11.44%, $color-hover-gradient-end 123.93%);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
-  }
+.btn_gradient:hover {
+  background-image: $color-gradient-hover;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .commander_btn {
   display: flex;
   justify-content: center;
   padding: 10px 0 30px 0;
-
-  &.text {
-    color: white;
-    font-size: 16px;
-    align-items: center;
-  }
 }
 
-// Animation des plats
-.container_button {
-  animation: fondu 1s forwards;
-  opacity: 0;
-  &_entree {
-      animation-delay: 0s;
-  }
-  &_plat {
-      animation-delay: 0.5s;
-  }
-  &_dessert {
-      animation-delay: 1s;
-  }
-  
+.commander_btn_text {
+  color: $color-white;
+  font-size: 16px;
+  align-items: center;
 }
 
-@keyframes fondu {
-from {
-    opacity: 0;
-    transform: scale(0);
-}
-to {
-    opacity: 1;
-    transform: scale(1);
-}
-}
-
-
-
-.restaurant_subtitle {
-  animation: swipe 1s forwards;
-  opacity: 0;
-  &_start {
-      animation-delay: 0s;
-  }
-  &_middle {
-      animation-delay: 0.5s;
-  }
-  &_end {
-      animation-delay: 1s;
-  }
-}
-
-@keyframes swipe {
-  from {
-      opacity: 0;
-      transform: translateX(-100px);
-  }
-  to {
-      opacity: 1;
-      transform: translateX(0);
-  }
-}
-
-
-
-// Footer styles
+/****** Gestion du footer ******/
 footer {
   width: auto;
   height: auto;
-  background-color: #353535;
+  background-color: $color-dark-gray;
   display: flex;
   flex-direction: column;
-  padding: 22px 25px;
+  padding: 22px 25px 22px 25px;
   gap: 16px;
-
-  img {
-    height: 20px;
-    fill: white !important;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    font-family: $font-roboto;
-    font-size: 15px;
-    font-weight: 300;
-    gap: 7px;
-
-    .nav-container {
-      &:first-child {
-        font-weight: 400;
-      }
-
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    a {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      color: white;
-      font-size: 16px;
-      text-decoration: none;
-      gap: 7px;
-
-      i {
-        width: 18px;
-      }
-    }
-  }
 }
 
-// Media queries
+footer img {
+  height: 20px;
+  fill: $color-white !important;
+}
+
+footer nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: $font-family-roboto;
+  font-size: 15px;
+  font-weight: 300;
+  gap: 7px;
+}
+
+footer nav .nav-container:first-child {
+  font-weight: 400;
+}
+
+footer nav .nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+footer nav a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: $font-family-roboto;
+  color: $color-white;
+  font-size: 16px;
+  text-decoration: none;
+  gap: 7px;
+}
+
+footer nav a i {
+  width: 18px;
+}
+
+/****** Media Queries ******/
 @media screen and (min-width: 769px) {
   .restaurant_title {
     text-align: center;
@@ -380,21 +355,22 @@ footer {
     gap: 3em;
     height: 8em;
     margin-top: 16em;
+  }
+  footer img {
+    display: flex;
+    margin-bottom: 0;
+  }
 
-    img {
-      display: flex;
-      margin-bottom: 0;
-    }
+  footer nav {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+  }
 
-    nav {
-      flex-direction: row;
-      gap: 3em;
-
-      .nav-container {
-        flex-direction: row;
-        gap: 16px;
-      }
-    }
+  footer nav .nav-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
   }
 }
 
@@ -402,11 +378,9 @@ footer {
   .description_title {
     font-size: 40px;
   }
-
   .description_subtitle {
     font-size: 18px;
   }
-
   .menu_restaurant {
     padding: 0px 210px;
     width: 80%;

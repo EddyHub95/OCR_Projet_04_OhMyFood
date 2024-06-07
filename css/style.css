@@ -342,6 +342,14 @@ section a {
   -webkit-text-fill-color: transparent;
 }
 
+.fa-heart:hover::before {
+  cursor: pointer;
+  color: rgb(210, 127, 191);
+  transition: color 1.5s ease-out;
+  font-weight: bold;
+}
+
+
 /******  Gestion du bouton Nouveau  ******/
 .new {
   width: 90px;
