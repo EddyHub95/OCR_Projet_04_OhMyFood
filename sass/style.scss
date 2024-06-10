@@ -1,0 +1,539 @@
+/****************** Variables ***************/
+/****************** Textes pricipaux ***************/
+$color_1: #353535;
+$color_2: white;
+$color_3: #7e7e7e;
+$color_4: #9356dc;
+$color_5: black;
+$color_6: rgb(210, 127, 191);
+$color_7: #008766;
+$color_8: rgb(255, 255, 255);
+$font-family_1: "Roboto";
+/****************** pour le fond de la page ***************/
+$background-color_1: #ffffff;
+$background-color_2: #000000c7;
+$background-color_3: white;
+$background-color_4: #e4e4e4;
+$background-color_5: #f6f6f6;
+$background-color_6: #9356dc;
+$background-color_7: #f3f3f3;
+$background-color_8: #99e2d0;
+$background-color_9: #353535;
+
+
+/****************** Animations lors du chargement de la page ***************/
+/****************** Chargement de la page ***************/
+@keyframes fadeOut { /****************** pour masquer les éléments ***************/
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		z-index: -1;
+		display: none;
+	}
+}
+@keyframes spin { /****************** pour les loader circulaires ***************/
+	0% {
+		transform: rotate(0deg);
+		visibility: visible;
+	}
+	100% {
+		transform: rotate(360deg);
+		visibility: hidden;
+	}
+}
+
+/****************** réinitialisation des marges et des paddings ***************/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: $background-color_1;
+	margin: auto;
+}
+
+/************* et défini un conteneur principal ".main-wrapper" 
+		qui centralise le contenu pour une meilleure gestion de la mise en page. ***************/
+.main-wrapper {
+	max-width: 1024px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+/****************** Chargement de la page ***************/
+/*********** une classe ".overlay" pour afficher un écran de chargement 
+			et une classe ".loader" pour l'animation de chargement **********/
+.overlay {
+	background-color: $background-color_2;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: fadeOut 3s ease-in-out 0s 1 forwards;
+}
+.loader {
+	position: absolute;
+	width: 250px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: radial-gradient(farthest-side, #9356dc 94%, #0000) top/8px 8px no-repeat, conic-gradient(#0000 30%, #9356dc);
+	-webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+	animation: spin 3s linear 0ms both;
+}
+
+/****** Gestion de l'entête / Description du restaurant ******/
+/************ L'entête est stylisé pour être fixe en haut de la page + box shadow ***************/
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $background-color_3;
+	width: auto;
+	height: 63px;
+	box-shadow: 0 0 5px 0;
+	position: relative;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+/************ Barre de recherche***************/
+.location {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	height: 50px;
+	background-color: $background-color_4;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+	position: sticky;
+	i {
+		color: $color_1;
+		padding: 5px;
+		margin-left: 70px;
+	}
+	input {
+		outline: none;
+		border: none;
+		background-color: $background-color_4;
+		font-family: $font-family_1;
+		color: $color_1;
+		font-size: 16px;
+		font-weight: bold;
+		margin-left: 5px;
+	}
+}
+.description {
+	span {
+		font-family: $font-family_1;
+		color: $color_2;
+		align-items: center;
+	}
+	width: auto;
+	height: auto;
+	background-color: $background-color_5;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-family: $font-family_1;
+	padding: 60px;
+	text-align: center;
+	align-items: center;
+}
+.description_title {
+	font-size: 25px;
+	padding: 10px;
+	font-family: $font-family_1;
+}
+.description_subtitle {
+	font-weight: 300;
+}
+.explorer_btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+}
+.explorer_btn_text {
+	color: $color_2;
+	font-size: 16px;
+	align-items: center;
+}
+
+/******  Bouton btn_gradient  ******/
+.btn_gradient {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #9356dc;
+	border-radius: 25px;
+	padding: 13px;
+	background-image: linear-gradient( 179deg, rgb(255, 121, 218) -11.44%, rgb(147, 86, 220) 123.93% );
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+	border: none;
+	width: 220px;
+	height: 53px;
+	line-height: 30px;
+	font-family: $font-family_1;
+	text-decoration: none;
+	&:hover {
+		background-image: linear-gradient( 179deg, rgb(252, 132, 218) -11.44%, rgb(155, 99, 223) 123.93% );
+		box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+	}
+}
+
+/******  Section fonctionnement  ******/
+/******  explique comment le site fonctionne, avec des boutons stylisés pour être à la fois informatifs et interactifs. 
+		Les numéros des étapes sont dans des cercles colorés pour attirer l'attention.  ********************************/
+
+.container_fonctionnement {
+	width: auto;
+	height: auto;
+	background-color: $background-color_3;
+	padding: 40px 20px;
+	margin-top: 10px;
+}
+.container_fonctionnement_title {
+	font-family: $font-family_1;
+	font-weight: 700;
+	font-size: 24px;
+	padding: 20px 0px;
+}
+.container_list {
+	padding: 0px 0px 10px 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.container_fonctionnement_btn {
+	display: flex;
+	background-color: $background-color_5;
+	border-radius: 20px;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+	font-family: $font-family_1;
+	border: none;
+	position: relative;
+	padding: 2em 6.5em 2em 2em;
+	cursor: pointer;
+	&:active {
+		.icone_fonctionnement_color {
+			color: $color_4;
+		}
+	}
+}
+.container_fonctionnement_text {
+	margin-left: 30px;
+	line-height: 19px;
+	font-family: $font-family_1;
+	font-weight: 500;
+	font-size: 16px;
+}
+.container_fonctionnement_number {
+	border-radius: 100%;
+	padding: 3px 7px;
+	background-color: $background-color_6;
+	color: $color_2;
+	font-size: 12px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: -1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.icone_fonctionnement {
+	color: $color_3;
+	font-size: 17px;
+}
+.icone_fonctionnement_color {
+	font-size: 17px;
+}
+
+/******  Section restaurant  ******/
+/********** Les cartes de restaurant sont stylisées pour afficher une image en haut, 
+			suivie des informations du restaurant ******/
+.container_restaurants {
+	background-color: $background-color_7;
+	width: auto;
+	height: auto;
+	padding: 50px 15px;
+}
+.container_restaurant_card {
+	padding: 20px 0;
+}
+.container_restaurants_title {
+	padding-bottom: 20px;
+	font-family: $font-family_1;
+	font-weight: 700;
+	font-size: 24px;
+}
+.card {
+	width: 100%;
+	height: 251px;
+	background-color: $background-color_3;
+	border-radius: 15px;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+	position: relative;
+	margin-bottom: 20px;
+}
+.card_restaurant {
+	object-fit: cover;
+	width: 100%;
+	height: 170px;
+	border-radius: 15px 15px 0 0;
+}
+.card_restaurant_image {
+	object-fit: cover;
+	width: 100%;
+	height: 170px;
+	border-radius: 15px 15px 0 0;
+}
+.card_restaurant_title {
+	font-family: $font-family_1;
+	font-weight: 700;
+	font-size: 16px;
+	padding: 10px 10px 5px 10px;
+}
+.card_restaurant_subtitle {
+	font-family: $font-family_1;
+	padding: 0 10px;
+	font-size: 16px;
+}
+section {
+	a {
+		text-decoration: none;
+		color: $color_5;
+		font-family: $font-family_1;
+	}
+}
+
+/******  Gestion des favoris avec un effect au survol  ******/
+.heart {
+	display: flex;
+	font-size: 1.5em;
+	justify-content: space-between;
+	position: absolute;
+	right: 1em;
+	top: 190px;
+	&:active {
+		.fa-regular {
+			display: none;
+		}
+		.fa-solid {
+			display: block;
+		}
+	}
+	.fa-solid {
+		display: none;
+		background: -webkit-linear-gradient(#9356dc, #ff79da);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+.fa-heart {
+	&:hover {
+		&::before {
+			cursor: pointer;
+			color: $color_6;
+			transition: color 1.5s ease-out;
+			font-weight: bold;
+		}
+	}
+}
+
+/******  Gestion du bouton Nouveau  ******/
+.new {
+	width: 90px;
+	height: 30px;
+	background-color: $background-color_8;
+	color: $color_7;
+	font-family: $font-family_1;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 2px;
+	padding: 2px;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	text-align: center;
+	font-size: 14px;
+	line-height: 27px;
+	font-weight: 600;
+}
+
+/******  Gestion du footer  ******/
+footer {
+	width: auto;
+	height: auto;
+	background-color: $background-color_9;
+	display: flex;
+	flex-direction: column;
+	padding: 22px 25px 22px 25px;
+	gap: 16px;
+	img {
+		height: 20px;
+		fill: white !important;
+	}
+	nav {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		font-family: $font-family_1;
+		font-size: 15px;
+		font-weight: 300;
+		gap: 7px;
+		.nav-container {
+			&:first-child {
+				font-weight: 400;
+			}
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+		a {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			font-family: $font-family_1;
+			color: $color_8;
+			font-size: 16px;
+			text-decoration: none;
+			gap: 7px;
+			i {
+				width: 18px;
+			}
+		}
+	}
+}
+
+/********** Media Queries ******************/
+@media screen and (min-width: 769px) {
+	.description_title {
+		font-size: 30px;
+	}
+	.container_list {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 30px;
+	}
+	.container_fonctionnement_text {
+		flex-shrink: 0;
+		margin-left: 13px;
+	}
+	.container_fonctionnement_title {
+		font-size: 23px;
+	}
+	.container_restaurants {
+		padding: 30px 20px 0 20px;
+	}
+	.container_restaurants_card {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 50px;
+		padding: 0px 0px 30px 0px;
+	}
+	section {
+		.card {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+	.container_restaurants_title {
+		font-size: 23px;
+	}
+	.card {
+		width: 45%;
+		margin: 0;
+	}
+	.card_restaurant_title {
+		font-size: 17px;
+		padding: 10px 0 3px 15px;
+	}
+	.card_restaurant_subtitle {
+		font-size: 16px;
+		padding: 0 0 0 15px;
+	}
+	.heart {
+		i {
+			top: 83%;
+			right: 2vh;
+			font-size: 25px;
+		}
+	}
+	footer {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: flex-end;
+		padding: 2em 1.5em;
+		gap: 3em;
+		height: 8em;
+		img {
+			display: flex;
+			margin-bottom: 0;
+		}
+		nav {
+			display: flex;
+			flex-direction: row;
+			gap: 3em;
+			.nav-container {
+				display: flex;
+				flex-direction: row;
+				gap: 16px;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 1024px) {
+	.container_fonctionnement {
+		padding: 20px 0px;
+		max-width: 1024px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.description_title {
+		font-size: 40px;
+	}
+	.description_subtitle {
+		font-size: 18px;
+	}
+	.container_restaurants {
+		margin: auto;
+		padding: 2em;
+	}
+	.container_fonctionnement_text {
+		margin-left: 15px;
+	}
+	.card {
+		width: 45%;
+		height: 238px;
+	}
+	.card_restaurant_title {
+		font-size: 18px;
+		padding: 10px 0 3px 20px;
+	}
+	.card_restaurant_subtitle {
+		font-size: 17px;
+		padding: 0 0 0 20px;
+	}
+	.heart {
+		i {
+			top: 83%;
+			right: 2vh;
+			font-size: 25px;
+		}
+	}
+}

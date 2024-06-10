@@ -3,18 +3,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-/******************CSS Accueil***************/
+/****************** réinitialisation des marges et des paddings 
+                    pour assurer une consistance dans le rendu 
+                    sur différents navigateurs.***************/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/******* Le body a un fond blanc 
+        et utilise une marge automatique pour centrage  ********/
 body {
   background-color: #ffffff;
   margin: auto;
 }
 
+
+/****************** La classe .main-wrapper est le conteneur principal, 
+centré horizontalement, avec une largeur maximale de 1024px 
+et une disposition en colonne. ***************/
 .main-wrapper{
   max-width: 1024px;
   margin: auto;
@@ -23,7 +31,8 @@ body {
 }
 
 /****************** Chargement de la page ***************/
-
+/********** Nous avons une animation de chargement qui utilise des @keyframes 
+            pour une transition de fondu en 3 secondes ***************/
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -73,6 +82,9 @@ body {
 }
 
 /****** Gestion de l'entête / Description du restaurant ******/
+/************ L'en-tête (header) est centré avec une ombre pour une meilleure distinction. 
+             La section ".description" a une présentation centrée avec des marges internes 
+              pour que le texte soit bien espacé*********/
 header {
   display: flex;
   justify-content: center;
@@ -154,6 +166,9 @@ header {
   align-items: center;
 }
 
+/******  Bouton btn_gradient  ******/
+/******** Les boutons, comme « .btn_gradient », sont stylisés avec des dégradés et des ombres. 
+les liens et les textes à l'intérieur des boutons respectent le thème général. ************/
 .btn_gradient {
   display: flex;
   justify-content: center;
@@ -185,6 +200,9 @@ header {
 }
 
 /******  Section fonctionnement  ******/
+/*********  Les conteneurs comme « .container_fonctionnement »  
+et « .container_restaurants » ont des paddings et marges bien définis 
+pour une structure claire  *********/
 .container_fonctionnement {
   width: auto;
   height: auto;
@@ -318,6 +336,8 @@ section a {
 }
 
 /******  Gestion des favoris  ******/
+/*********Les icônes de cœur pour les favoris changent de couleur au clic, 
+grâce aux classes « .fa-regular » et « .fa-solid » *********/
 .heart {
   display: flex;
   font-size: 1.5em;
@@ -370,6 +390,10 @@ section a {
 }
 
 /******  Gestion du footer  ******/
+/*********Le « footer » est structuré en colonnes pour les petits écrans 
+et en rangées pour les écrans plus larges. 
+Les liens et les icônes sont disposés de manière flexible 
+pour s'adapter à différents formats d'écran.***********/
 footer {
   width: auto;
   height: auto;
@@ -420,7 +444,10 @@ footer nav a i{
   width: 18px;
 }
 
+/********** Media Queries : s'adapter aux differentes tailles d'écran ******************/
 
+/********•	Pour les écrans de 769px et plus, nous ajustons les tailles de texte 
+et la disposition en ligne des boutons et des cartes.**********/
 @media screen and (min-width: 769px) {
   .description_title {
     font-size: 30px;
@@ -506,6 +533,11 @@ footer nav a i{
   }
 }
 
+
+
+/*******•	Pour les écrans de 1024px et plus, nous maximisons l'espace 
+et augmentons la taille des polices 
+pour une meilleure lisibilité.**********/
 @media screen and (min-width: 1024px) {
   .container_fonctionnement {
     padding: 20px 0px;
